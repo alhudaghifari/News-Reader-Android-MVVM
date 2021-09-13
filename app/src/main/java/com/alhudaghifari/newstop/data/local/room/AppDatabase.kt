@@ -1,4 +1,4 @@
-package com.alhudaghifari.newstop.data.room
+package com.alhudaghifari.newstop.data.local.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

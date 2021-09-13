@@ -1,4 +1,4 @@
-package com.alhudaghifari.newstop.data.room
+package com.alhudaghifari.newstop.data.local.room
 
 import androidx.paging.DataSource
 import androidx.room.*
@@ -11,6 +11,9 @@ interface AppDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertNews(news: List<ArticlesItem>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertANews(news: ArticlesItem)
 
     @Query("SELECT * FROM news_table")
     fun getNews(): DataSource.Factory<Int, ArticlesItem>
