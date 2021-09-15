@@ -9,15 +9,21 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsTop">
+        <activity
+            android:name=".ui.detailwebview.DetailWebviewActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsTop.NoActionBar"  />
         <activity
             android:name=".ui.detail.DetailNewsActivity"
             android:exported="true"
             android:label="@string/detail_news"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.NewsTop.NoActionBar"/>
+            android:theme="@style/Theme.NewsTop.NoActionBar" />
         <activity
             android:name=".ui.favorite.FavoriteActivity"
             android:exported="true"

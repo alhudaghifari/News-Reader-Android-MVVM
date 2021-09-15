@@ -1,12 +1,13 @@
 package com.alhudaghifari.newstop.ui.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.data.model.ArticlesItem
 import com.alhudaghifari.newstop.databinding.ActivityDetailNewsBinding
-import com.alhudaghifari.newstop.databinding.ActivityFavoriteBinding
+import com.alhudaghifari.newstop.ui.detailwebview.DetailWebviewActivity
 import com.alhudaghifari.newstop.utils.TimeUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -52,6 +53,11 @@ class DetailNewsActivity : AppCompatActivity() {
             tvAuthor.text = dataItem.author
             tvSource.text = dataItem.source?.name ?: "-"
             tvOverview.text = dataItem.content
+            tvReadFull.setOnClickListener {
+                val intent = Intent(this@DetailNewsActivity, DetailWebviewActivity::class.java)
+                intent.putExtra(DetailWebviewActivity.data_url, dataItem.url)
+                startActivity(intent)
+            }
 
             Glide.with(this@DetailNewsActivity)
                 .load(dataItem.urlToImage)
