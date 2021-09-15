@@ -14,7 +14,11 @@
         android:theme="@style/Theme.NewsTop">
         <activity
             android:name=".ui.favorite.FavoriteActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/favorite"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsTop.NoActionBar"  />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true"
