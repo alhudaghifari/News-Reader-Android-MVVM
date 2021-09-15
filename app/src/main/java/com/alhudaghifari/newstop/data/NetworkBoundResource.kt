@@ -1,7 +1,9 @@
-package com.alhudaghifari.newstop.data.remote
+package com.alhudaghifari.newstop.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import com.alhudaghifari.newstop.data.remote.ApiResponse
+import com.alhudaghifari.newstop.data.remote.StatusResponse
 import com.alhudaghifari.newstop.utils.AppExecutors
 import com.alhudaghifari.newstop.vo.Resource
 
