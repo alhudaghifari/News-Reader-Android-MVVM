@@ -13,12 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsTop">
         <activity
+            android:name=".ui.detail.DetailNewsActivity"
+            android:exported="true"
+            android:label="@string/detail_news"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NewsTop.NoActionBar"/>
+        <activity
             android:name=".ui.favorite.FavoriteActivity"
             android:exported="true"
             android:label="@string/favorite"
             android:parentActivityName=".ui.main.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.NewsTop.NoActionBar"  />
+            android:theme="@style/Theme.NewsTop.NoActionBar" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true"

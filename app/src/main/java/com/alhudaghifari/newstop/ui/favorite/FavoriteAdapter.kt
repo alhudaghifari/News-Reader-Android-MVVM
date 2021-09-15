@@ -1,5 +1,6 @@
 package com.alhudaghifari.newstop.ui.favorite
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.data.model.ArticlesItem
 import com.alhudaghifari.newstop.databinding.ItemNewsBinding
+import com.alhudaghifari.newstop.ui.detail.DetailNewsActivity
 import com.alhudaghifari.newstop.utils.TimeUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -48,9 +50,9 @@ class FavoriteAdapter : PagedListAdapter<ArticlesItem, FavoriteAdapter.MyViewHol
                 tvDescription.text = data.description ?: ""
 
                 itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailMovieActivity::class.java)
-//                    intent.putExtra(DetailMovieActivity.MOVIE_DATA, movie)
-//                    itemView.context.startActivity(intent)
+                    val intent = Intent(itemView.context, DetailNewsActivity::class.java)
+                    intent.putExtra(DetailNewsActivity.NEWS_DATA, data)
+                    itemView.context.startActivity(intent)
                 }
 
                 Glide.with(itemView.context)
