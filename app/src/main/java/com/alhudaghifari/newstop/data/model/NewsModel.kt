@@ -37,10 +37,10 @@ data class Source(
 @Parcelize
 @Entity(tableName = "news_table")
 data class ArticlesItem(
-	@PrimaryKey
+	@PrimaryKey(autoGenerate = true)
 	@NonNull
 	@ColumnInfo(name = "newsId")
-	var newsId: String,
+	var newsId: Int,
 
 	@ColumnInfo(name = "isFavorite")
 	var isFavorite: Boolean = false,

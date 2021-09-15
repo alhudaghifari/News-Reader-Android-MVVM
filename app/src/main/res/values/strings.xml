@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">News Top</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="news_title">News Title</string>
+    <string name="published">Published at</string>
+    <string name="description">Description</string>
+    <string name="no_data">No Data</string>
 </resources>

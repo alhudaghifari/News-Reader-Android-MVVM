@@ -8,7 +8,9 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatDelegate
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.ui.main.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
