@@ -6,7 +6,9 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.alhudaghifari.newstop.databinding.ActivityDetailWebviewBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailWebviewActivity : AppCompatActivity() {
 
     companion object {

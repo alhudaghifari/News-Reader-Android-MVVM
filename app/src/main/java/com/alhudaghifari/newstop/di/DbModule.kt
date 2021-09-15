@@ -23,5 +23,5 @@ class DbModule {
 
     @Singleton
     @Provides
-    fun provideMovieDao(database: AppDatabase): AppDao = database.appDao()
+    fun provideNewsDao(database: AppDatabase): AppDao = database.appDao()
 }

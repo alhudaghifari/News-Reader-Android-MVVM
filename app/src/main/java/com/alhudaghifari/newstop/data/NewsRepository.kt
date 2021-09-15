@@ -1,6 +1,7 @@
 package com.alhudaghifari.newstop.data
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.alhudaghifari.newstop.data.local.NewsLocalDataSource
@@ -30,7 +31,7 @@ class NewsRepository @Inject constructor(
                 ).build()
             }
 
-            override fun shouldFetch(data: PagedList<ArticlesItem>?): Boolean = true
+            override fun shouldFetch(data: PagedList<ArticlesItem>?): Boolean = data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<ArticlesItem>>> = remoteDataSource.getNews()
 
@@ -45,6 +46,14 @@ class NewsRepository @Inject constructor(
             .setPageSize(4)
             .build()
         return LivePagedListBuilder(localDataSource.getFavoriteNews(), config).build()
+    }
+
+    fun getAFavoriteNews(idNews: Int) : LiveData<ArticlesItem> {
+        val data = MutableLiveData<ArticlesItem>()
+        appExecutors.diskIO().execute {
+            data.postValue(localDataSource.getANews(idNews))
+        }
+        return data
     }
 
     fun setFavoriteNews(news: ArticlesItem, isFavorite: Boolean) {

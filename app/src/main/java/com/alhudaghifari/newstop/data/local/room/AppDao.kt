@@ -18,6 +18,9 @@ interface AppDao {
     @Query("SELECT * FROM news_table")
     fun getNews(): DataSource.Factory<Int, ArticlesItem>
 
+    @Query("SELECT * from news_table where newsId = :id")
+    fun getANews(id: Int) : ArticlesItem?
+
     @Query("SELECT * FROM news_table where isFavorite = 1")
     fun getFavoriteNews(): DataSource.Factory<Int, ArticlesItem>
 }

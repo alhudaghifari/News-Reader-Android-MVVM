@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.data.model.ArticlesItem
 import com.alhudaghifari.newstop.databinding.ActivityDetailNewsBinding
@@ -11,7 +12,9 @@ import com.alhudaghifari.newstop.ui.detailwebview.DetailWebviewActivity
 import com.alhudaghifari.newstop.utils.TimeUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailNewsActivity : AppCompatActivity() {
 
     companion object {
@@ -20,6 +23,8 @@ class DetailNewsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailNewsBinding
     private lateinit var dataItem : ArticlesItem
+    private val viewModel : DetailNewsViewModel by viewModels()
+    private var isFav = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +40,11 @@ class DetailNewsActivity : AppCompatActivity() {
             data?.let {
                 dataItem = it
                 setData()
+                observeFavorite()
             }
         }
+
+        setFavoriteButtonListener()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -44,6 +52,33 @@ class DetailNewsActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun setFavoriteButtonListener() {
+        binding.ibFavorite.setOnClickListener {
+            isFav = !isFav
+            viewModel.setFavoriteNews(dataItem, isFav)
+            setColorFav()
+        }
+    }
+
+    private fun observeFavorite() {
+        viewModel.getAFavNews(dataItem.newsId).observe(this, {
+            if (it != null) {
+                it.isFavorite.let {
+                    isFav = it
+                    setColorFav()
+                }
+            }
+        })
+    }
+
+    private fun setColorFav() {
+        if (isFav) {
+            binding.ibFavorite.setImageResource(R.drawable.ic_favorite_full_red)
+        } else {
+            binding.ibFavorite.setImageResource(R.drawable.ic_favorite_border_red)
+        }
     }
 
     private fun setData() {
