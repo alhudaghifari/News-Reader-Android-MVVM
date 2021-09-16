@@ -1,11 +1,11 @@
 package com.alhudaghifari.newstop.ui.splashscreen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.ui.login.LoginActivity

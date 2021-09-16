@@ -1,7 +1,5 @@
 package com.alhudaghifari.newstop.utils
 
-import android.content.Context
-import com.alhudaghifari.newstop.R
 import java.text.SimpleDateFormat
 import java.util.*
 

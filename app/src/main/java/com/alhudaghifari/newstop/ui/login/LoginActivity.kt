@@ -1,12 +1,11 @@
 package com.alhudaghifari.newstop.ui.login
 
 import android.content.Intent
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.databinding.ActivityLoginBinding
 import com.alhudaghifari.newstop.ui.main.MainActivity

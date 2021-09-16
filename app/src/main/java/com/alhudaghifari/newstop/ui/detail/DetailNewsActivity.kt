@@ -1,10 +1,10 @@
 package com.alhudaghifari.newstop.ui.detail
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.data.model.ArticlesItem
 import com.alhudaghifari.newstop.databinding.ActivityDetailNewsBinding
