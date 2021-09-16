@@ -15,4 +15,11 @@
     <string name="content">Content</string>
     <string name="read_full">\>\> Read full content..</string>
 
+    <string name="hint_username">Username (agit)</string>
+    <string name="hint_pass">Password (123)</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="credential_false">Wrong Credential (login using hint)</string>
+    <string name="loading">Loading please wait..</string>
+
 </resources>

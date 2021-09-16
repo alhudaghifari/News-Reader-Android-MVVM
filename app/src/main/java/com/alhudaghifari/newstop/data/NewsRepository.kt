@@ -59,4 +59,9 @@ class NewsRepository @Inject constructor(
     fun setFavoriteNews(news: ArticlesItem, isFavorite: Boolean) {
         appExecutors.diskIO().execute { localDataSource.setFavoriteNews(news, isFavorite) }
     }
+
+    fun doLogin(username: String, password: String) : Boolean {
+        if (username == "agit" && password == "123") return true
+        else return false
+    }
 }

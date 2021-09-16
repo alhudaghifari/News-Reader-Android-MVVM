@@ -6,4 +6,10 @@
         android:icon="@drawable/ic_favorite_full_white"
         android:title="@string/favorite"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_baseline_more_vert_24"
+        android:title="@string/logout"
+        app:showAsAction="collapseActionView|withText" />
 </menu>

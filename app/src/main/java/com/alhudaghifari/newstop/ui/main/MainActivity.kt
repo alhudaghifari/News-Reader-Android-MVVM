@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alhudaghifari.newstop.R
 import com.alhudaghifari.newstop.databinding.ActivityMainBinding
 import com.alhudaghifari.newstop.ui.favorite.FavoriteActivity
+import com.alhudaghifari.newstop.ui.login.LoginActivity
 import com.alhudaghifari.newstop.vo.Status
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_favorite) {
             startActivity(Intent(this, FavoriteActivity::class.java))
+            return true
+        } else if (item.itemId == R.id.action_logout) {
+            viewModel.doLogout()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
             return true
         }
         return super.onOptionsItemSelected(item)
